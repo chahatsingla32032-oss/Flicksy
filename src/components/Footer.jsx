@@ -1,0 +1,2 @@
+import { Clapperboard, Github } from 'lucide-react';
+export default function Footer(){return <footer className="footer"><div className="wrap footer-inner"><div><div className="brand footer-brand"><span className="brand-icon"><Clapperboard size={20}/></span>flicksy<span className="brand-dot">.</span></div><p>Your next movie night starts here.</p></div><div className="footer-right"><span>Made with React + Vite</span><span>© {new Date().getFullYear()} Flicksy</span></div></div></footer>}

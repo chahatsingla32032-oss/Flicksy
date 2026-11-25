@@ -1,0 +1,5 @@
+import { Link } from 'react-router-dom';
+import { Heart, Compass } from 'lucide-react';
+import MovieCard from '../components/MovieCard';
+import { useWatchlist } from '../hooks/useWatchlist';
+export default function Watchlist(){const {watchlist}=useWatchlist();return <main className="page-shell wrap"><div className="page-intro"><span className="section-kicker"><Heart size={15}/> SAVED FOR LATER</span><h1>Your <span>watchlist.</span></h1><p>All the films you want to make time for.</p></div>{watchlist.length?<><div className="results-line"><span><strong>{watchlist.length}</strong> {watchlist.length===1?'film':'films'} saved</span></div><div className="movie-grid">{watchlist.map(m=><MovieCard key={m.id} movie={m}/>)}</div></>:<div className="empty-state"><span className="empty-icon"><Heart size={28}/></span><h2>Your next movie night is unwritten.</h2><p>Tap the heart on any movie to save it here.</p><Link className="button button-primary" to="/movies"><Compass size={17}/> Explore movies</Link></div>}</main>}
